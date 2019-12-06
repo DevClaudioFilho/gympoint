@@ -13,7 +13,7 @@ class RegistrationController {
   async index(req, res) {
     const registrations = await Registration.findAll({
       order: ['start_date'],
-      attributes: ['id', 'start_date', 'end_date', 'price'],
+      attributes: ['id', 'start_date', 'end_date', 'price', 'active'],
       include: [
         {
           model: Student,

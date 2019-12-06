@@ -1,8 +1,21 @@
 import * as Yup from 'yup';
 import Student from '../models/Student';
-
+import { Op } from 'sequelize';
 class StudentController {
   async index(req, res) {
+    const { q } = req.query;
+
+    if (q) {
+      const student = await Student.findAll({
+        where: {
+          name: {
+            [Op.iLike]: `%${q}%`,
+          },
+        },
+      });
+      return res.json(student);
+    }
+
     const students = await Student.findAll();
     return res.json(students);
   }
