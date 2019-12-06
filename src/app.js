@@ -4,6 +4,7 @@ import express from 'express';
 import path from 'path';
 import Youch from 'youch';
 import 'express-async-errors';
+import cors from 'cors';
 
 import routes from './routes';
 import './database';
