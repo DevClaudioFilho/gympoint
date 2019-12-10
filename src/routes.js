@@ -1,3 +1,4 @@
+//Routes
 import { Router } from 'express';
 import authMiddleware from './app/middlewares/auth';
 import SessionController from './app/controllers/SessionController';
